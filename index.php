@@ -180,13 +180,15 @@ foreach ( $students as $s ) { // 学生ごと
 					if($anon_f[$k]==1) {
 						$row[] = "done";
 					} else {
-						$row[] = userdate( $fstats[$k][$s->id]->submissiondate,'%Y/%m/%d %H:%M:%S' );
+						$row[] = date( 'Y/m/d H:i:s', $fstats[$k][$s->id]->submissiondate );
+//						$row[] = userdate( $fstats[$k][$s->id]->submissiondate,'%Y/%m/%d %H:%M:%S' );
 					}
 				} else {
 					if($anon_f[$k]==1) {
 						$row[] = "&#10003;"; // チェックマーク
 					} else {
-						$row[] = userdate( $fstats[$k][$s->id]->submissiondate,'%m/%d' );
+						$row[] = date( 'm/d', $fstats[$k][$s->id]->submissiondate );
+//						$row[] = userdate( $fstats[$k][$s->id]->submissiondate,'%m/%d' );
 					}
 				}
 				$count +=1;
